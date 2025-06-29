@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
       title: 'Dice Roller',
       home: Scaffold(
         body: Container(
-          decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.deepPurple, Colors.deepPurpleAccent])),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.deepPurple, Colors.deepPurpleAccent],
+            ),
+          ),
           child: StartScreen(),
         ),
       ),

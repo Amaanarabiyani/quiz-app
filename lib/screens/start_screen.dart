@@ -5,6 +5,6 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [Center(child: Text("Start Screen"))]);
+    return Center(child: Text("Start Screen", style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.white)));
   }
 }
