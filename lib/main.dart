@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rolldice/screens/start_screen.dart';
+import 'package:rolldice/screens/quiz.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,19 +10,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Dice Roller',
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.deepPurple, Colors.deepPurpleAccent],
-            ),
-          ),
-          child: StartScreen(),
-        ),
-      ),
-      debugShowCheckedModeBanner: false,
-    );
+    return MaterialApp(home: Quiz(), debugShowCheckedModeBanner: false);
   }
 }
