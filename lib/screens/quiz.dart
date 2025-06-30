@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:rolldice/screens/question_Screen.dart';
 import 'package:rolldice/screens/start_screen.dart';
 
 class Quiz extends StatefulWidget {
@@ -11,9 +12,27 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  var activeScreen = 'start-screen';
+
+  void switchScreen() {
+    setState(() {
+      activeScreen = 'question-screen';
+    });
+  }
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   activeScreen = StartScreen(startQuiz: switchScreen);
+  // }
+
   @override
   Widget build(BuildContext context) {
     log("Quiz");
+    Widget screenWidget = StartScreen(startQuiz: switchScreen);
+    if (activeScreen == 'question-screen') {
+      screenWidget = QuestionScreen();
+    }
     return MaterialApp(
       title: 'Dice Roller',
       home: Scaffold(
@@ -27,7 +46,7 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: StartScreen(),
+          child: screenWidget,
         ),
       ),
       debugShowCheckedModeBanner: false,
